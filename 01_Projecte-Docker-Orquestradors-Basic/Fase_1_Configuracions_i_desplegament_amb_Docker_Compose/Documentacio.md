@@ -9,6 +9,7 @@ El primer pass ha de ser instal·lar (en cas de que no ho este ja), el docker, h
 sudo apt-get install docker.io
 ```
 ![Imatge1](Imatges/1.png)
+<br>
 Seguidament haurem de activar i revisar el estat del docker:
 ```
 sudo systemctl start docker
