@@ -28,6 +28,7 @@ Ara el que hem de fer es instal·lar el docker compose.
 sudo apt-get install docker-compose
 ```
 ![Imatge4](Imatges/4.png)
+<br>
 Revisem la versio per si de cas:
 ```
 docker-compose up -d
