@@ -1,6 +1,7 @@
 # <p align="center">  Introducció a Docker Compose i la seva sintaxis </p>
 ------------
-aaaa
+Docker Compose permet definir l’arquitectura d’una aplicació mitjançant un sol fitxer. Permet desplegar tots els serveis de manera conjunta amb una sola comanda.
+És una eina que permet gestionar aplicacions Docker. Mitjançant un fitxer amb format YAML, es poden declarar els serveis, xarxes i volums necessaris per a desplegar un entorn complet d’aplicació. Aquesta eina simplifica la gestió dels projectes que inclouen diversos serveis, com podria ser un entorn LAMP.
 
 # <p align="center">  Introducció a Docker Compose i la seva sintaxis </p>
 ------------
@@ -42,5 +43,8 @@ El següent pas es revisar els contenidors:
 docker-compose ps
 ```
 ![Imatge5](Imatges/5.png)
+
+# <p align="center">  Disseny i creació d’un entorn multi-contenidor amb Docker Compose </p>
+------------
 
 
