@@ -47,4 +47,4 @@ docker-compose ps
 # <p align="center">  Disseny i creació d’un entorn multi-contenidor amb Docker Compose </p>
 ------------
 
-
+![Imatge6](Imatges/Esquema.png)
