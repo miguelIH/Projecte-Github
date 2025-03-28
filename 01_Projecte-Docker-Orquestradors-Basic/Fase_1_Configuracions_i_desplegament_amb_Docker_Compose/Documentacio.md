@@ -103,8 +103,7 @@ docker-compose ps
 
 # <p align="center">  Disseny i creació d’un entorn multi-contenidor amb Docker Compose </p>
 ------------
-El nostre esquema i disseny es basa en el que es veu a la captura, amb la configuració dels ports
-![Imatge6](Imatges/Esquema.png)
+El nostre esquema i disseny, amb la tota la seva configuració:
 
 ***
 | Servei         | Contenidor       | Port Extern | Port Intern |
@@ -113,21 +112,5 @@ El nostre esquema i disseny es basa en el que es veu a la captura, amb la config
 | MySQL          | db               | (no exposat)| 3306        |
 | phpMyAdmin     | phpmyadmin       | 8081        | 80          |
 ***
-***
-+-----------+         +-----------+
-|   web     | <-----> |   db      |
-| Apache+PHP|         | MySQL     |
-+-----------+         +-----------+
-       ^
-       |
-+---------------+
-| phpMyAdmin    |
-+---------------+
-***
-```mermaid
-graph TD;
-    User --> Web[Apache + PHP];
-    Web --> DB[MySQL];
-    Web --> PhpMyAdmin;
 
-
+![Imatge6](Imatges/Esquema.png)
