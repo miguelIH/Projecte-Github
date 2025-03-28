@@ -12,11 +12,11 @@ services:
     image: php:7.4-apache
     container_name: apache-php
     ports:
-      - "80:80"  # Exposa el port 80 del contenidor al port 80 del host
+      - "80:80"  
     volumes:
-      - ./www:/var/www/html  # Carpeta local que es muntarà dins el contenidor
+      - ./www:/var/www/html  
     depends_on:
-      - db  # Indica que depèn de la base de dades
+      - db  
     networks:
       - lamp-network
 
@@ -31,7 +31,7 @@ services:
       MYSQL_USER: dma
       MYSQL_PASSWORD: 12345
     volumes:
-      - db_data:/var/lib/mysql  # Volum per persistir les dades
+      - db_data:/var/lib/mysql  
     networks:
       - lamp-network
 
