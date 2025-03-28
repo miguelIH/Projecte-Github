@@ -115,5 +115,5 @@ El nostre esquema i disseny, amb la tota la seva configuració:
 ![Imatge6](Imatges/Esquema.png)
 
 # README
-### [Fase 2] (https://github.com/miguelIH/Projecte-Github/blob/main/01_Projecte-Docker-Orquestradors-Basic/Fase_2_Orquestraci%C3%B3_i_desplegament_amb_Docker_Swarm/Documentacio.md)
+### [Fase 2](https://github.com/miguelIH/Projecte-Github/blob/main/01_Projecte-Docker-Orquestradors-Basic/Fase_2_Orquestraci%C3%B3_i_desplegament_amb_Docker_Swarm/Documentacio.md).
 
