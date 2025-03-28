@@ -106,10 +106,12 @@ docker-compose ps
 El nostre esquema i disseny es basa en el que es veu a la captura, amb la configuració dels ports
 ![Imatge6](Imatges/Esquema.png)
 
+***
 | Servei         | Contenidor       | Port Extern | Port Intern |
 |----------------|------------------|-------------|-------------|
 | Apache + PHP   | web              | 8080        | 80          |
 | MySQL          | db               | (no exposat)| 3306        |
 | phpMyAdmin     | phpmyadmin       | 8081        | 80          |
+***
 
 
