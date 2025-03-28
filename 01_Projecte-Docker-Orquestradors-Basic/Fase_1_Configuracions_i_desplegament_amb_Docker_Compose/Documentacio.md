@@ -105,7 +105,6 @@ docker-compose ps
 ------------
 El nostre esquema i disseny, amb la tota la seva configuració:
 
-***
 | Servei         | Contenidor       | Port Extern | Port Intern |
 |----------------|------------------|-------------|-------------|
 | Apache + PHP   | web              | 8080        | 80          |
