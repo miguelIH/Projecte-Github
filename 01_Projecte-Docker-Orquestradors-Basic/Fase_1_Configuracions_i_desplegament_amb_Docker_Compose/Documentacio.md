@@ -3,7 +3,7 @@
 Docker Compose permet definir l’arquitectura d’una aplicació mitjançant un sol fitxer. Permet desplegar tots els serveis de manera conjunta amb una sola comanda.
 És una eina que permet gestionar aplicacions Docker. Mitjançant un fitxer amb format YAML, es poden declarar els serveis, xarxes i volums necessaris per a desplegar un entorn complet d’aplicació. Aquesta eina simplifica la gestió dels projectes que inclouen diversos serveis, com podria ser un entorn LAMP.
 
-AQUEST ES EL NOSTRE ARTXIU DE CONFIGURACIÓ:
+AQUEST ÉS EL NOSTRE ARXIU DE CONFIGURACIÓ:
 ```
 version: '3.8'
 
