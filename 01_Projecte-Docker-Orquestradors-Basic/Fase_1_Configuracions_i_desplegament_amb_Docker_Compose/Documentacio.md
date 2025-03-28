@@ -113,5 +113,21 @@ El nostre esquema i disseny es basa en el que es veu a la captura, amb la config
 | MySQL          | db               | (no exposat)| 3306        |
 | phpMyAdmin     | phpmyadmin       | 8081        | 80          |
 ***
+***
++-----------+         +-----------+
+|   web     | <-----> |   db      |
+| Apache+PHP|         | MySQL     |
++-----------+         +-----------+
+       ^
+       |
++---------------+
+| phpMyAdmin    |
++---------------+
+***
+```mermaid
+graph TD;
+    User --> Web[Apache + PHP];
+    Web --> DB[MySQL];
+    Web --> PhpMyAdmin;
 
 
