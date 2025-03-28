@@ -124,10 +124,11 @@ El nostre esquema i disseny es basa en el que es veu a la captura, amb la config
 | phpMyAdmin    |
 +---------------+
 ***
-```mermaid
+```
+mermaid
 graph TD;
     User --> Web[Apache + PHP];
     Web --> DB[MySQL];
     Web --> PhpMyAdmin;
-
+```
 
