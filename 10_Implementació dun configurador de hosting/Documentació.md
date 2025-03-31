@@ -6,10 +6,11 @@ Opcions que oferirem:
 - CPU: 1vCPU, 2vCPU, 4vCPU
 - RAM: 1GB, 2GB, 4GB
 - Sistema Operatiu: Ubuntu, Debian, Windows Server
-- Serveis addicionals:
-Servidor Web (Apache)
-Base de dades (MySQL)
-FTP
+
+Serveis addicionals:
+- Servidor Web (Apache)
+- Base de dades (MySQL)
+- FTP
 
 Plataformes preinstal·lades:
 - WordPress
