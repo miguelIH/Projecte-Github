@@ -41,6 +41,7 @@ Plataformes preinstal·lades:
 # <p align="center"> Planificació del lloc web  </p>
 ------------
 Aquest és el nostre esquema inicial, amb l'objectiu de representar el nostre web i la seva interfície, ho hem fet amb l'eina [Lucidchart](https://www.lucidchart.com).
+<br>
 ![Imatge1](Imatges/1.png)
 <br>
 
