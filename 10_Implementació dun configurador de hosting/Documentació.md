@@ -21,8 +21,8 @@ Plataformes preinstal·lades:
 
 | **Element**               | **Opció**                         | **Preu/mes (€)** |
 |---------------------------|-----------------------------------|------------------|
-| **Espai de disc**         | 20GB                              | 5                |
-|                           | 50GB                              | 10               |
+|                           | 20GB                              | 5                |
+| **Espai de disc**         | 50GB                              | 10               |
 |                           | 100GB                             | 15               |
 | **Transferència mensual** | 500GB                             | 5                |
 |                           | 1TB                               | 10               |
