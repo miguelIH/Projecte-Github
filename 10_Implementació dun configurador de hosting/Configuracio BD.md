@@ -14,3 +14,17 @@ Una vegada dins, creem la base de dades:
 CREATE DATABASE nom_bd;
 ```
 ![Imatge1](Imatges10/Config_BD/1.png)
+Seguidament el següent pas, es crear el usuari:
+```
+CREATE USER 'nom_usuari'@'localhost' IDENTIFIED BY 'contrasenya';
+```
+I configurar-ho amb els permisos corresponents:
+```
+GRANT ALL PRIVILEGES ON configurador_hosting.* TO 'dma'@'localhost';
+```
+I apliquem canvis:
+```
+FLUSH PRIVILEGES;
+```
+![Imatge1](Imatges10/Config_BD/2.png)
+
