@@ -71,32 +71,36 @@ sudo systemctl enable apache2 mariadb
 ```
 sudo systemctl start apache2 mariadb
 ```
-foto
+```
+sudo systemctl status apache2 mariadb
+```
+![Imatge6](Imatges10/6.png)
 
 Instal·lacions de les plataformes:
 -----------
 ```
 sudo apt install git -y
 ```
-
+![Imatge7](Imatges10/7.png)
 ```
 sudo apt install curl unzip -y
 ```
-
+![Imatge8](Imatges10/8.png)
 ```
 curl -sS https://getcomposer.org/installer | php
 ```
-
+![Imatge9](Imatges10/9.png)
 ```
 sudo mv composer.phar /usr/local/bin/composer
 ```
-
+![Imatge10](Imatges10/10.png)
 
 
 
 
 
 # README
+### [Fase 1](https://github.com/miguelIH/Projecte-Github/blob/main/01_Projecte-Docker-Orquestradors-Basic/Fase_1_Configuracions_i_desplegament_amb_Docker_Compose/Documentacio.md)
 ### [Fase 2](https://github.com/miguelIH/Projecte-Github/blob/main/01_Projecte-Docker-Orquestradors-Basic/Fase_2_Orquestraci%C3%B3_i_desplegament_amb_Docker_Swarm/Documentacio.md)
 ### [Fase 3](https://github.com/miguelIH/Projecte-Github/blob/main/01_Projecte-Docker-Orquestradors-Basic/Fase_3_Seguretat_a_Docker_Swarm/Documentacio.md)
 ### [Fase 4](https://github.com/miguelIH/Projecte-Github/blob/main/01_Projecte-Docker-Orquestradors-Basic/Fase_4_Orquestraci%C3%B3_amb_Kubernetes/Documentacio.md)
