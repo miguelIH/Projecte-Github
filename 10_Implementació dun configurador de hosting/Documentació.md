@@ -57,10 +57,6 @@ sudo apt install apache2 -y
 ```
 foto
 ```
-sudo apt install apache2 -y
-```
-foto
-```
 sudo apt install php libapache2-mod-php php-mysql php-cli php-curl php-xml php-mbstring -y
 ```
 foto
