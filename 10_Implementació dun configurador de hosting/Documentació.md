@@ -42,7 +42,7 @@ Plataformes preinstal·lades:
 ------------
 Aquest és el nostre esquema inicial, amb l'objectiu de representar el nostre web i la seva interfície, ho hem fet amb l'eina [Lucidchart](https://www.lucidchart.com).
 <br>
-![Imatge1](Imatgess/1.png)
+![Imatge1](Imatges/1.png)
 <br>
 
 # <p align="center"> Planificació dels serveis  </p>
@@ -55,15 +55,15 @@ Servidor Web + PHP + Base de Dades (LAMP)
 ```
 sudo apt install apache2 -y
 ```
-![Imatge2](Imatgess/2.png)
+![Imatge2](Imatges/2.png)
 ```
 sudo apt install php libapache2-mod-php php-mysql php-cli php-curl php-xml php-mbstring -y
 ```
-![Imatge3](Imatgess/3.png)
+![Imatge3](Imatges/3.png)
 ```
 sudo apt install mariadb-server mariadb-client -y
 ```
-![Imatge4](Imatgess/4.png)
+![Imatge4](Imatges/4.png)
 ```
 sudo systemctl enable apache2 mariadb
 ```
