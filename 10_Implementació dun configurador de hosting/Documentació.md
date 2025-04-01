@@ -71,6 +71,9 @@ sudo systemctl enable apache2 mariadb
 ```
 sudo systemctl start apache2 mariadb
 ```
+```
+sudo systemctl status apache2 mariadb
+```
 ![Imatge6](Imatges10/6.png)
 
 Instal·lacions de les plataformes:
