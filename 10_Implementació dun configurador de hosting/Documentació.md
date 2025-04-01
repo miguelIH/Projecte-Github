@@ -67,7 +67,7 @@ sudo apt install mariadb-server mariadb-client -y
 ```
 sudo systemctl enable apache2 mariadb
 ```
-foto
+![Imatge5](Imatges10/5.png)
 ```
 sudo systemctl start apache2 mariadb
 ```
