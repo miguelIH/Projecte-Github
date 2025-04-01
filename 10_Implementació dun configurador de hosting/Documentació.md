@@ -55,19 +55,15 @@ Servidor Web + PHP + Base de Dades (LAMP)
 ```
 sudo apt install apache2 -y
 ```
-foto
-```
-sudo apt install apache2 -y
-```
-foto
+![Imatge2](Imatges/2.png)
 ```
 sudo apt install php libapache2-mod-php php-mysql php-cli php-curl php-xml php-mbstring -y
 ```
-foto
+![Imatge3](Imatges/3.png)
 ```
 sudo apt install mariadb-server mariadb-client -y
 ```
-foto
+![Imatge4](Imatges/4.png)
 ```
 sudo systemctl enable apache2 mariadb
 ```
