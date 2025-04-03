@@ -56,6 +56,8 @@ IMPORTANT la ruta d'aquests fixers sempres es:
 ```
 /var/www/html
 ```
+<br>
+
 Seguidament nosaltres hem creat una carpeta dins d'aquesta ruta amb el nom 'includes', i dins d'aquesta carpeta només haura d'estar el fitxer db.php <br>
 Començant per el 'db.php' ja que aquest fa de connexió amb la base de dades, per fer-ho, nosaltres ho hem fet d'aquesta manera:
 ```
