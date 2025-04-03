@@ -51,11 +51,11 @@ Per fer això haurem de crear una base de dades (la informacio es troba a 'Confi
 - index.php
 - register.php
 - login.php
+- logout.php
+- new-server.php
+
 <br>
-IMPORTANT la ruta d'aquests fixers sempres es:
-```
-/var/www/html
-```
+IMPORTANT la ruta d'aquests fixers sempres es: '/var/www/html'
 <br>
 
 Seguidament nosaltres hem creat una carpeta dins d'aquesta ruta amb el nom 'includes', i dins d'aquesta carpeta només haura d'estar el fitxer db.php <br>
