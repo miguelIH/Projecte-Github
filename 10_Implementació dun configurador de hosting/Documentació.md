@@ -44,6 +44,7 @@ Aquest és el nostre esquema inicial, amb l'objectiu de representar el nostre we
 <br>
 ![Imatge1](Imatges10/1.png)
 <br>
+Aixì es com hem implementat el nostre sistema de registre i login:
 
 # <p align="center"> Planificació dels serveis  </p>
 ------------
