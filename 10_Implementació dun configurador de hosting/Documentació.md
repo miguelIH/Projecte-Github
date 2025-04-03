@@ -44,8 +44,108 @@ Aquest és el nostre esquema inicial, amb l'objectiu de representar el nostre we
 <br>
 ![Imatge1](Imatges10/1.png)
 <br>
-Aixì es com hem implementat el nostre sistema de registre i login:
+Aixì es com hem implementat el nostre sistema de registre i login, per arribar fins aqui:
+![Imatge1](Imatges10/11.png)
+Per fer això haurem de crear una base de dades (la informacio es troba a 'Configuracio BD'), una vegada creat i configurat haurem de crear el següents arxius:
+- db.php
+- index.php
+- register.php
+- login.php
+IMPORTANT la ruta d'aquests fixers sempres es:
+```
+/var/www/html
+```
+Seguidament nosaltres hem creat una carpeta dins d'aquesta ruta amb el nom 'includes', i dins d'aquesta carpeta només haura d'estar el fitxer db.php
+Començant per el 'db.php' ja que aquest fa de connexió amb la base de dades, per fer-ho, nosaltres ho hem fet d'aquesta manera:
+```
+<?php
+$host = 'localhost';
+$db = 'hosting_configurator'; // posar el nom de la vostra bd
+$user = 'dma'; // l'usuari que has creat
+$pass = '12345'; // la seva contrasenya
 
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Error de connexió: " . $e->getMessage());
+}
+?>
+```
+Seguidament pasem a fer l'arxiu del index, on es trobaran dos enllaços tant per a registrar-se, com per iniciar sessió. index.php:
+```
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Benvingut al Configurador de Hosting</title>
+</head>
+<body>
+    <h1>Pagina d'inici</h1>
+    <p><a href="register.php">Registrar-se</a> | <a href="login.php">Iniciar Sessió</a></p>
+</body>
+</html>
+```
+Deprés haurem de fer el arxiu de registre register.php:
+```
+<?php
+session_start();
+require 'includes/db.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+
+    $stmt = $pdo->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
+    try {
+        $stmt->execute([$name, $email, $password]);
+        $_SESSION['user'] = $email;
+        header("Location: dashboard.php");
+    } catch (PDOException $e) {
+        echo "Error: aquest correu ja està registrat.";
+    }
+}
+?>
+
+<form method="POST">
+    Nom: <input type="text" name="name" required><br>
+    Correu electrònic: <input type="email" name="email" required><br>
+    Contrasenya: <input type="password" name="password" required><br>
+    <input type="submit" value="Registrar-se">
+</form>
+```
+I el per iniciar sessió, login.php:
+```
+<?php
+session_start();
+require 'includes/db.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->execute([$email]);
+    $user = $stmt->fetch();
+
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user'] = $user['email'];
+        header("Location: dashboard.php");
+    } else {
+        echo "Credencials incorrectes.";
+    }
+}
+?>
+
+<form method="POST">
+    Correu electrònic: <input type="email" name="email" required><br>
+    Contrasenya: <input type="password" name="password" required><br>
+    <input type="submit" value="Iniciar sessió">
+</form>
+```
 # <p align="center"> Planificació dels serveis  </p>
 ------------
 Configuracio del Maquinari:
