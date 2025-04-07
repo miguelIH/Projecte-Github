@@ -27,5 +27,21 @@ I apliquem canvis:
 ```
 FLUSH PRIVILEGES;
 ```
-![Imatge1](Imatges10/Config_BD/2.png)
+![Imatge2](Imatges10/Config_BD/2.png)
+Seguidament haurem de fer la següent taula:
+```
+CREATE TABLE servers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_email VARCHAR(100),
+    name VARCHAR(100),
+    cpu INT,
+    ram INT,
+    disk INT,
+    os VARCHAR(50),
+    platform VARCHAR(50),
+    status VARCHAR(20) DEFAULT 'aturat',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+![Imatge3](Imatges10/Config_BD/3.png)
 

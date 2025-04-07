@@ -53,6 +53,7 @@ Per fer això haurem de crear una base de dades (la informacio es troba a 'Confi
 - login.php
 - logout.php
 - new-server.php
+- servers.php
 
 <br>
 IMPORTANT la ruta d'aquests fixers sempres es: '/var/www/html'
@@ -148,6 +149,199 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     Contrasenya: <input type="password" name="password" required><br>
     <input type="submit" value="Iniciar sessió">
 </form>
+```
+Seguim amb el codi del fixer, logout.php
+```
+<?php
+session_start();
+session_destroy();
+header("Location: index.php");
+exit;
+```
+Contiuem fent el servers.php
+```
+<?php
+session_start();
+require 'includes/db.php';
+
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit;
+}
+
+$email = $_SESSION['user'];
+
+// Accions
+if (isset($_GET['action']) && isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    if ($_GET['action'] === 'engegar') {
+        $pdo->prepare("UPDATE servers SET status = 'actiu' WHERE id = ? AND user_email = ?")->execute([$id, $email]);
+    }
+
+    if ($_GET['action'] === 'aturar') {
+        $pdo->prepare("UPDATE servers SET status = 'aturat' WHERE id = ? AND user_email = ?")->execute([$id, $email]);
+    }
+}
+
+// Carrega de servidors
+$stmt = $pdo->prepare("SELECT * FROM servers WHERE user_email = ?");
+$stmt->execute([$email]);
+$servers = $stmt->fetchAll();
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Els meus servidors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Els meus servidors</h2>
+
+    <?php if (empty($servers)): ?>
+        <p>No tens cap servidor creat encara.</p>
+    <?php else: ?>
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>CPU</th>
+                <th>RAM</th>
+                <th>Disc</th>
+                <th>SO</th>
+                <th>Plataforma</th>
+                <th>Estat</th>
+                <th>Accions</th>
+            </tr>
+            <?php foreach ($servers as $srv): ?>
+            <tr>
+                <td><?= htmlspecialchars($srv['name']) ?></td>
+                <td><?= $srv['cpu'] ?> vCPU</td>
+                <td><?= $srv['ram'] ?> GB</td>
+                <td><?= $srv['disk'] ?> GB</td>
+                <td><?= htmlspecialchars($srv['os']) ?></td>
+                <td><?= htmlspecialchars($srv['platform']) ?></td>
+                <td><?= $srv['status'] ?></td>
+                <td>
+                    <?php if ($srv['status'] === 'aturat'): ?>
+                        <a href="?action=engegar&id=<?= $srv['id'] ?>">Engegar</a>
+                    <?php else: ?>
+                        <a href="?action=aturar&id=<?= $srv['id'] ?>">Aturar</a>
+                    <?php endif; ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+    <?php endif; ?>
+
+    <p><a href="dashboard.php">Tornar al panell</a></p>
+</div>
+</body>
+</html>
+```
+Per últim farem el new-server.php
+```
+<?php
+session_start();
+require 'includes/db.php';
+
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit;
+}
+
+$msg = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $cpu = $_POST['cpu'];
+    $ram = $_POST['ram'];
+    $disk = $_POST['disk'];
+    $os = $_POST['os'];
+    $platform = $_POST['platform'];
+
+    // Preus (segons la taula que vas passar)
+    $preu = 0;
+    if ($disk == 20) $preu += 5;
+    elseif ($disk == 50) $preu += 10;
+    else $preu += 15;
+
+    if ($cpu == 1) $preu += 5;
+    elseif ($cpu == 2) $preu += 10;
+    else $preu += 15;
+
+    if ($ram == 1) $preu += 5;
+    elseif ($ram == 2) $preu += 10;
+    else $preu += 15;
+
+    if ($platform != "cap") $preu += 5;
+
+    $stmt = $pdo->prepare("INSERT INTO servers (user_email, name, cpu, ram, disk, os, platform, status) VALUES (?, ?, ?, ?, ?, ?, ?, 'aturat')");
+    $stmt->execute([$_SESSION['user'], $name, $cpu, $ram, $disk, $os, $platform]);
+
+    $msg = "Servidor creat correctament. Preu mensual estimat: {$preu} €";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nou servidor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Configura un nou servidor</h2>
+
+    <?php if ($msg) echo "<p>$msg</p>"; ?>
+
+    <form method="POST">
+        Nom del servidor: <input type="text" name="name" required>
+
+        <label>CPU:</label>
+        <select name="cpu">
+            <option value="1">1 vCPU</option>
+            <option value="2">2 vCPU</option>
+            <option value="4">4 vCPU</option>
+        </select>
+
+        <label>RAM:</label>
+        <select name="ram">
+            <option value="1">1 GB</option>
+            <option value="2">2 GB</option>
+            <option value="4">4 GB</option>
+        </select>
+
+        <label>Disc:</label>
+        <select name="disk">
+            <option value="20">20 GB</option>
+            <option value="50">50 GB</option>
+            <option value="100">100 GB</option>
+        </select>
+
+        <label>Sistema Operatiu:</label>
+        <select name="os">
+            <option value="Ubuntu">Ubuntu</option>
+            <option value="Debian">Debian</option>
+            <option value="Windows">Windows Server</option>
+        </select>
+
+        <label>Plataforma:</label>
+        <select name="platform">
+            <option value="cap">Cap</option>
+            <option value="WordPress">WordPress</option>
+            <option value="Nextcloud">Nextcloud</option>
+            <option value="PrestaShop">PrestaShop</option>
+        </select>
+
+        <input type="submit" value="Crear servidor">
+    </form>
+
+    <p><a href="dashboard.php">Tornar</a></p>
+</div>
+</body>
+</html>
 ```
 # <p align="center"> Planificació dels serveis  </p>
 ------------
