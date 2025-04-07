@@ -45,7 +45,7 @@ Aquest és el nostre esquema inicial, amb l'objectiu de representar el nostre we
 ![Imatge1](Imatges10/1.png)
 <br>
 Aixì es com hem implementat el nostre sistema de registre i login, per arribar fins aqui:
-![Imatge1](Imatges10/11.png)
+![Imatge2](Imatges10/11.png)
 Per fer això haurem de crear una base de dades (la informacio es troba a 'Configuracio BD'), una vegada creat i configurat haurem de crear el següents arxius:
 - db.php
 - index.php
@@ -60,6 +60,7 @@ IMPORTANT la ruta d'aquests fixers sempres es: '/var/www/html'
 <br>
 
 [![Demo vídeo](Imatges10/Demo/miniatura.png)](https://youtu.be/BTcw1NiljSM?si=BlS5rRMA1_YvDu95)
+
 
 # <p align="center"> Planificació dels serveis  </p>
 ------------
