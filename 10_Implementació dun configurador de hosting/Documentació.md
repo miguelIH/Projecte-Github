@@ -243,6 +243,8 @@ $servers = $stmt->fetchAll();
 Per últim farem el new-server.php
 ```
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 session_start();
 require 'includes/db.php';
 
@@ -261,22 +263,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $os = $_POST['os'];
     $platform = $_POST['platform'];
 
-    // Preus (segons la taula que vas passar)
+    // Calcul preu
     $preu = 0;
-    if ($disk == 20) $preu += 5;
-    elseif ($disk == 50) $preu += 10;
-    else $preu += 15;
-
-    if ($cpu == 1) $preu += 5;
-    elseif ($cpu == 2) $preu += 10;
-    else $preu += 15;
-
-    if ($ram == 1) $preu += 5;
-    elseif ($ram == 2) $preu += 10;
-    else $preu += 15;
-
+    $preu += ($disk == 20) ? 5 : (($disk == 50) ? 10 : 15);
+    $preu += ($cpu == 1) ? 5 : (($cpu == 2) ? 10 : 15);
+    $preu += ($ram == 1) ? 5 : (($ram == 2) ? 10 : 15);
     if ($platform != "cap") $preu += 5;
 
+    // Inserir a BD
     $stmt = $pdo->prepare("INSERT INTO servers (user_email, name, cpu, ram, disk, os, platform, status) VALUES (?, ?, ?, ?, ?, ?, ?, 'aturat')");
     $stmt->execute([$_SESSION['user'], $name, $cpu, $ram, $disk, $os, $platform]);
 
@@ -293,12 +287,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 <div class="container">
     <h2>Configura un nou servidor</h2>
-
     <?php if ($msg) echo "<p>$msg</p>"; ?>
-
     <form method="POST">
         Nom del servidor: <input type="text" name="name" required>
-
         <label>CPU:</label>
         <select name="cpu">
             <option value="1">1 vCPU</option>
@@ -337,11 +328,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <input type="submit" value="Crear servidor">
     </form>
-
     <p><a href="dashboard.php">Tornar</a></p>
 </div>
 </body>
 </html>
+
 ```
 # <p align="center"> Planificació dels serveis  </p>
 ------------
