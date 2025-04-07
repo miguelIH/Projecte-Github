@@ -54,7 +54,6 @@ Per fer això haurem de crear una base de dades (la informacio es troba a 'Confi
 - new-server.php
 - servers.php
 
-<br>
 IMPORTANT la ruta d'aquests fixers sempres es: '/var/www/html'
 <br>
 
