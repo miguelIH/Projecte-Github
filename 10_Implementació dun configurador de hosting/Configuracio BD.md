@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/4a033ca3-66e0-4c4d-bf33-1d4175b0dd4d)# <p align="center">  Configuracio BD  </p>
+# <p align="center">  Configuracio BD  </p>
 ------------
 En aquest fixer trobem tota la configuració basica, que hem utilizat, amb l'objectiu de intal·lar i configurar la nostre base de dades. Primer de tot haurem de tenir tot instal·lat, per fer-ho seguim aquest passos (si ja esta tot instal·lat passa al següent apartat)
 
