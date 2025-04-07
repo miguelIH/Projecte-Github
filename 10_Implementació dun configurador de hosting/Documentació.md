@@ -59,6 +59,7 @@ Per fer això haurem de crear una base de dades (la informacio es troba a 'Confi
 IMPORTANT la ruta d'aquests fixers sempres es: '/var/www/html'
 <br>
 
+Seguidament, si fem clic en el vídeo, veurem com és el resultat final una vegada ja aplicat i configurat tots els codis:
 [![Demo vídeo](Imatges10/Demo/miniatura.png)](https://youtu.be/BTcw1NiljSM?si=BlS5rRMA1_YvDu95)
 
 
