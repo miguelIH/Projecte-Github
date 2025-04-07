@@ -149,6 +149,117 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="submit" value="Iniciar sessió">
 </form>
 ```
+Seguim amb el codi del fixer, logout.php
+```
+<?php
+session_start();
+session_destroy();
+header("Location: index.php");
+exit;
+```
+Per últim farem el new-server.php
+```
+<?php
+session_start();
+require 'includes/db.php';
+
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit;
+}
+
+$msg = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $cpu = $_POST['cpu'];
+    $ram = $_POST['ram'];
+    $disk = $_POST['disk'];
+    $os = $_POST['os'];
+    $platform = $_POST['platform'];
+
+    // Preus (segons la taula que vas passar)
+    $preu = 0;
+    if ($disk == 20) $preu += 5;
+    elseif ($disk == 50) $preu += 10;
+    else $preu += 15;
+
+    if ($cpu == 1) $preu += 5;
+    elseif ($cpu == 2) $preu += 10;
+    else $preu += 15;
+
+    if ($ram == 1) $preu += 5;
+    elseif ($ram == 2) $preu += 10;
+    else $preu += 15;
+
+    if ($platform != "cap") $preu += 5;
+
+    $stmt = $pdo->prepare("INSERT INTO servers (user_email, name, cpu, ram, disk, os, platform, status) VALUES (?, ?, ?, ?, ?, ?, ?, 'aturat')");
+    $stmt->execute([$_SESSION['user'], $name, $cpu, $ram, $disk, $os, $platform]);
+
+    $msg = "Servidor creat correctament. Preu mensual estimat: {$preu} €";
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nou servidor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Configura un nou servidor</h2>
+
+    <?php if ($msg) echo "<p>$msg</p>"; ?>
+
+    <form method="POST">
+        Nom del servidor: <input type="text" name="name" required>
+
+        <label>CPU:</label>
+        <select name="cpu">
+            <option value="1">1 vCPU</option>
+            <option value="2">2 vCPU</option>
+            <option value="4">4 vCPU</option>
+        </select>
+
+        <label>RAM:</label>
+        <select name="ram">
+            <option value="1">1 GB</option>
+            <option value="2">2 GB</option>
+            <option value="4">4 GB</option>
+        </select>
+
+        <label>Disc:</label>
+        <select name="disk">
+            <option value="20">20 GB</option>
+            <option value="50">50 GB</option>
+            <option value="100">100 GB</option>
+        </select>
+
+        <label>Sistema Operatiu:</label>
+        <select name="os">
+            <option value="Ubuntu">Ubuntu</option>
+            <option value="Debian">Debian</option>
+            <option value="Windows">Windows Server</option>
+        </select>
+
+        <label>Plataforma:</label>
+        <select name="platform">
+            <option value="cap">Cap</option>
+            <option value="WordPress">WordPress</option>
+            <option value="Nextcloud">Nextcloud</option>
+            <option value="PrestaShop">PrestaShop</option>
+        </select>
+
+        <input type="submit" value="Crear servidor">
+    </form>
+
+    <p><a href="dashboard.php">Tornar</a></p>
+</div>
+</body>
+</html>
+```
 # <p align="center"> Planificació dels serveis  </p>
 ------------
 Configuracio del Maquinari:
