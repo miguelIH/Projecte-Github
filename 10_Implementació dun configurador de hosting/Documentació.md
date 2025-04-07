@@ -44,8 +44,7 @@ Aquest és el nostre esquema inicial, amb l'objectiu de representar el nostre we
 <br>
 ![Imatge1](Imatges10/1.png)
 <br>
-Aixì es com hem implementat el nostre sistema de registre i login, per arribar fins aqui:
-![Imatge2](Imatges10/11.png)
+
 Per fer això haurem de crear una base de dades (la informacio es troba a 'Configuracio BD'), una vegada creat i configurat haurem de crear el següents arxius:
 - db.php
 - index.php
