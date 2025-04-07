@@ -59,6 +59,7 @@ Per fer això haurem de crear una base de dades (la informacio es troba a 'Confi
 IMPORTANT la ruta d'aquests fixers sempres es: '/var/www/html'
 <br>
 
+[![Demo vídeo](Imatges10/Demo/miniatura.png)](https://youtu.be/BTcw1NiljSM?si=BlS5rRMA1_YvDu95)
 
 # <p align="center"> Planificació dels serveis  </p>
 ------------
@@ -110,8 +111,6 @@ sudo mv composer.phar /usr/local/bin/composer
 ```
 ![Imatge10](Imatges10/10.png)
 
-
-[Veure demostració en vídeo]([DEMO/Definitivo.mkv](https://youtu.be/BTcw1NiljSM?si=BlS5rRMA1_YvDu95)) 
 
 
 # README
