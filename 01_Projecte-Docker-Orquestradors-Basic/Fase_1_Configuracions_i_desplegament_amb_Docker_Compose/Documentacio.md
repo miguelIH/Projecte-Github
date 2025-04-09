@@ -91,6 +91,7 @@ Revisem la versio per si de cas:
 ```
 docker-compose up -d
 ```
+
 També podem utilitzar aquesta comanda:
 ```
 docker-compose --version
