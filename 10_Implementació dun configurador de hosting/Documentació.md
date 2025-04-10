@@ -17,7 +17,7 @@ Plataformes preinstal·lades:
 - Nextcloud
 - PrestaShop
 
-### Preus orientatius (pots ajustar segons vulguis):
+### Preus:
 
 | **Element**               | **Opció**                         | **Preu/mes (€)** |
 |---------------------------|-----------------------------------|------------------|
