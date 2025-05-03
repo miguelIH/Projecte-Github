@@ -66,6 +66,7 @@ http://192.168.1.101:8080
 ```
 Cada cop que refrescàvem la pàgina, hem vist que el servei responia correctament, i si afegim una petita variació a cada index.php (com mostrar l'hostname o un número), es pot veure com van canviant.
 I refrescant diverses vegades. Per veure quina rèplica ens servia cada cop, hem afegit aquest codi al index.php:
+<br>
 ![Imatge6](Imatges/6.png)
 <br>
 ![Imatge7](Imatges/7.png)
