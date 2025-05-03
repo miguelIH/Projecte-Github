@@ -165,6 +165,10 @@ Misstage de que s’ha unit correctament:
 Importem un DashBoard:
 ![Imatge20](Imatges/20.png)
 <br>
+Ara a **Prometheus** veiem l’endpoint en estat UP, i des de **Grafana**, un cop importat el dashboard "Node Exporter Full", ja podem veure gràfiques com l’ús de CPU, RAM, disc, swap i més. 
+Aquest és el resultat final que hem obtingut:
+![Imatge21](Imatges/21.png)
+
 
 
 
