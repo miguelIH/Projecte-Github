@@ -52,7 +52,7 @@ Ens apareix una web on podem veure tots els contenidors que s’estan executant 
 ![Imatge5](Imatges/5.png)
 <br>
 Tambe podem accedir desde el node secundari:
-![Imatge6](Imatges/6.png)
+![Imatge6](Imatges/7.png)
 <br>
 Per poder monitoritzar el rendiment dels nostres serveis, hem instal·lat cAdvisor a cada node del clúster en mode global. Això ens ha permès veure el consum de CPU, RAM i altres recursos dels contenidors en temps real. És una eina molt útil per detectar problemes de rendiment o contenidors que consumeixen massa recursos.
 
@@ -68,7 +68,7 @@ http://192.168.1.101:8080
 Cada cop que refrescàvem la pàgina, hem vist que el servei responia correctament, i si afegim una petita variació a cada index.php (com mostrar l'hostname o un número), es pot veure com van canviant.
 I refrescant diverses vegades. Per veure quina rèplica ens servia cada cop, hem afegit aquest codi al index.php:
 <br>
-![Imatge6](Imatges/7.png)
+![Imatge6](Imatges/6.png)
 <br>
 ![Imatge7](Imatges/8.png)
 <br>
