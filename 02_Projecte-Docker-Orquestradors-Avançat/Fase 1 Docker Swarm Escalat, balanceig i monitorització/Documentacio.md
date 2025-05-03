@@ -14,7 +14,7 @@ Per veure en quin estat estaven les rèpliques i si s’estaven executant correc
 
 ## Estratègies de desplegament avançat
 Per evitar talls de servei en cas d’actualitzacions, hem afegit estratègies avançades al fitxer docker-stack.yml. Això ens permet fer canvis controlats, amb una sola rèplica actualitzant-se alhora, i rollback automàtic si alguna cosa falla.
- 
+<br>
 Aquest és el nou fitxer docker-stack.yml que hem fet servir:
 <br>
 ![Imatge2](Imatges/2.png)
