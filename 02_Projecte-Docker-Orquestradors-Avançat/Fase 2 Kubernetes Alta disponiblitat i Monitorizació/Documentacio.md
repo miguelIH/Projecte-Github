@@ -137,6 +137,36 @@ Després hem consultat l’URL:
 Ara farem el pont:
 ![Imatge12](Imatges/12.png)
 <br>
+I hem accedit a:
+```
+192.168.1.100: 31833
+```
+![Imatge13](Imatges/13.png)
+<br>
+## Configuració del node-exporter
+Hem creat el fitxer node-exporter-deployment.yaml amb les etiquetes necessàries perquè Grafana pugui detectar les instàncies:
+![Imatge14](Imatges/14.png)
+<br>
+Un cop desplegat:
+![Imatge15](Imatges/15.png)
+<br>
+Aquí podem veure el desplegament desde prometheus:
+![Imatge16](Imatges/16.png)
+<br>
+Admins de grafana podem conectarlo amb prometheus:
+![Imatge17](Imatges/17.png)
+<br>
+Podem la URL de prometheus: 
+![Imatge18](Imatges/18.png)
+<br>
+Misstage de que s’ha unit correctament:
+![Imatge19](Imatges/19.png)
+<br>
+Importem un DashBoard:
+![Imatge20](Imatges/20.png)
+<br>
+
+
 
 
 
