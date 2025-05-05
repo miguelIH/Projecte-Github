@@ -64,16 +64,50 @@ Hem aplicat la configuració amb:
 ```
 kubectl apply -f hpa-webserver.yaml
 ```
+![Imatge9](Imatges/8.png)
+<br>
 I hem comprovat que l’HPA estava funcionant amb:
 ```
 kubectl get hpa
 ```
+![Imatge9](Imatges/9.png)
+<br>
 Aquesta comanda ens ha permès veure l’ús real de CPU i memòria de tots els pods. En el nostre cas, els pods del webserver consumeixen entre 2m i 3m de CPU, molt per sota del 50% que hem definit com a límit al HPA. Això explica per què l’autoscaler no ha incrementat el nombre de rèpliques.
 ```
 kubectl top pods
 ```
-
-
-
-
-
+![Imatge10](Imatges/10.png)
+<br>
+## Kubernetes: Balanceig de Càrrega i Accés Extern
+En aquesta part hem treballat com exposar el nostre servei webserver a l'exterior, assegurant un accés distribuït i fiable. Hem utilitzat dos mecanismes habituals a Kubernetes: NodePort i Ingress Controller.
+## Accés amb NodePort
+En el nostre fitxer webserver-deployment.yaml, ja teníem definida l’exposició del servei mitjançant un Service de tipus NodePort:
+![Imatge11](Imatges/11.png)
+<br>
+Per poder accedir al servei web des del navegador de la meva màquina principal (fora de Minikube), he fet servir la comanda socat per crear un **pont entre el port del servei NodePort del clúster i el port local** del meu host:
+```
+sudo socat TCP-LISTEN:30080,reuseaddr, fork
+```
+![Imatge12](Imatges/12.png)
+<br>
+Això permet accedir al servei via navegador amb:
+![Imatge13](Imatges/13.png)
+<br>
+## Tolerància a errades i resiliència del sistema
+En aquesta última part de la Fase 3 hem volgut comprovar si el nostre servei web desplegat a Kubernetes és **realment capaç de recuperar-se automàticament** quan alguna cosa falla. Per això hem posat a prova les probes de salut (livenessProbe i readinessProbe) que havíem configurat anteriorment al fitxer webserver-deployment.yaml.
+![Imatge14](Imatges/14.png)
+<br>
+## Simulació d'una fallada interna
+Per provocar un error dins del pod i veure com reacciona Kubernetes, hem fet una acció manual que trenca el funcionament de la web: hem mogut l’arxiu index.php fora de la carpeta pública.
+Comanda utilitzada:
+```
+kubectl exec -it webserver-9b87d5b9c-58tf7 -- /bin/sh
+```
+![Imatge15](Imatges/15.png)
+<br>
+kubectl get pods mostra que el pod ha estat reiniciat gràcies a la livenessProbe.
+El pod afectat mostrava RESTARTS: 1, cosa que indica que **la livenessProbe ha detectat la fallada i Kubernetes ha reiniciat el contenidor.**
+```
+kubectl get pods
+```
+![Imatge16](Imatges/16.png)
