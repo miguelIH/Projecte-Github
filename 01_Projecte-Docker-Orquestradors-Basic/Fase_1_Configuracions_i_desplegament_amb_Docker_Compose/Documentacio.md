@@ -70,9 +70,9 @@ cd ~/projectes/docker-lamp
 Aquesta estructura ens ajuda a mantenir una separació clara entre els serveis i els fitxers de codi
 ## Disseny i creació d’un entorn multi-contenidor
 Hem dissenyat un entorn amb **dues capes**:
-- webserver
+- webserver <br>
 Fa servir la imatge php:8.2-apache, que ja porta instal·lat Apache i PHP. Exposa el port 8080 de la màquina host per poder accedir-hi des del navegador.
-- dbserver
+- dbserver <br>
 Utilitza la imatge oficial de mysql:8, configurada amb variables d’entorn per definir la base de dades, l’usuari i la contrasenya.
 
 ```
