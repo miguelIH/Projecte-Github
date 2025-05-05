@@ -1,4 +1,4 @@
-# <p align="center">  Introducció a Docker Compose i la seva sintaxis </p>
+# <p align="center"> Configuracions i desplegament amb Docker Compose  </p>
 ------------
 Docker Compose permet definir l’arquitectura d’una aplicació mitjançant un sol fitxer. Permet desplegar tots els serveis de manera conjunta amb una sola comanda.
 És una eina que permet gestionar aplicacions Docker. Mitjançant un fitxer amb format YAML, es poden declarar els serveis, xarxes i volums necessaris per a desplegar un entorn complet d’aplicació. Aquesta eina simplifica la gestió dels projectes que inclouen diversos serveis, com podria ser un entorn LAMP.
@@ -59,19 +59,24 @@ volumes:
   db_data:
 
 ```
-
-# <p align="center">  Configuració de l’entorn per a ús de Docker Compose.  </p>
-------------
+## Configuració de l’entorn per a ús de Docker Compose. 
 El primer pass ha de ser instal·lar (en cas de que no ho este ja), el docker, ho farem amb la següent comanda:
 ```
-sudo apt-get install docker.io
+mkdir -p ~/projectes/docker-lamp/web
+cd ~/projectes/docker-lamp
 ```
 ![Imatge1](Imatges/1.png)
 <br>
-Seguidament haurem de activar i revisar el estat del docker:
+Aquesta estructura ens ajuda a mantenir una separació clara entre els serveis i els fitxers de codi
+## Disseny i creació d’un entorn multi-contenidor
+Hem dissenyat un entorn amb **dues capes**:
+- webserver
+Fa servir la imatge php:8.2-apache, que ja porta instal·lat Apache i PHP. Exposa el port 8080 de la màquina host per poder accedir-hi des del navegador.
+- dbserver
+Utilitza la imatge oficial de mysql:8, configurada amb variables d’entorn per definir la base de dades, l’usuari i la contrasenya.
+
 ```
-sudo systemctl start docker
-sudo systemctl enable docker
+ç
 ```
 ![Imatge2](Imatges/2.png)
 <br>
