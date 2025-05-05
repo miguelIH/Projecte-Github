@@ -50,6 +50,35 @@ docker node ls
 ```
 ![Imatge6](Imatges/6.png)
 <br>
+En aquest cas es veuen els dos nodes el primer que es el secundari “dma2” i l’altre que es el principal
+## COMPROVACIO DE QUE EL NODE S’ACTUALIZA CORRECTAMENT
+Primer creen un servei desde el node principal:
+```
+docker service create --name test-nginx --replicas 2 -p 8081:80 nginx
+```
+![Imatge7](Imatges/7.png)
+<br>
+Aquesta comanda ha creat un servei anomenat test-nginx amb 2 rèpliques, van amb el port 80 del contenidor com a port 8081 del host. L’objectiu és poder accedir-hi des del navegador de la màquina física.
+Amb la comanda:
+```
+docker service ls
+```
+![Imatge8](Imatges/8.png)
+<br>
+Podem veure que les 2 repliques están actives i amb la comanda:
+```
+docker service ps test-nginx
+```
+![Imatge9](Imatges/9.png)
+<br>
+Això ens confirma que Docker Swarm ha distribuït les rèpliques automàticament entre el node manager i el node worker.
+
+![Imatge10](Imatges/10.png)
+<br>
+![Imatge11](Imatges/11.png)
+<br>
+Podem veure que tan amb la ip del principal com la del secundari funciona sense cap mena de problema
+
 
 # README
 ### [Fase 1](https://github.com/miguelIH/Projecte-Github/blob/main/01_Projecte-Docker-Orquestradors-Basic/Fase_1_Configuracions_i_desplegament_amb_Docker_Compose/Documentacio.md)
