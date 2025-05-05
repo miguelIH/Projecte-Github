@@ -1,4 +1,4 @@
-# <p align="center">  Introducció a Docker Compose i la seva sintaxis </p>
+# <p align="center"> Configuracions i desplegament amb Docker Compose  </p>
 ------------
 Docker Compose permet definir l’arquitectura d’una aplicació mitjançant un sol fitxer. Permet desplegar tots els serveis de manera conjunta amb una sola comanda.
 És una eina que permet gestionar aplicacions Docker. Mitjançant un fitxer amb format YAML, es poden declarar els serveis, xarxes i volums necessaris per a desplegar un entorn complet d’aplicació. Aquesta eina simplifica la gestió dels projectes que inclouen diversos serveis, com podria ser un entorn LAMP.
@@ -59,22 +59,43 @@ volumes:
   db_data:
 
 ```
-
-# <p align="center">  Configuració de l’entorn per a ús de Docker Compose.  </p>
-------------
+## Configuració de l’entorn per a ús de Docker Compose. 
 El primer pass ha de ser instal·lar (en cas de que no ho este ja), el docker, ho farem amb la següent comanda:
 ```
-sudo apt-get install docker.io
+mkdir -p ~/projectes/docker-lamp/web
+cd ~/projectes/docker-lamp
 ```
 ![Imatge1](Imatges/1.png)
 <br>
-Seguidament haurem de activar i revisar el estat del docker:
+Aquesta estructura ens ajuda a mantenir una separació clara entre els serveis i els fitxers de codi
+## Disseny i creació d’un entorn multi-contenidor
+Hem dissenyat un entorn amb **dues capes**:
+- webserver: <br>
+Fa servir la imatge php:8.2-apache, que ja porta instal·lat Apache i PHP. Exposa el port 8080 de la màquina host per poder accedir-hi des del navegador.
+- dbserver: <br>
+Tots dos serveis comparteixen una xarxa virtual privada anomenada lampnet, i el servei de MySQL guarda les dades dins un volum persistent.
+
+## Fitxer docker-compose.yml amb estructura multinivel
+Aquest és el fitxer docker-compose.yml que hem creat:
 ```
-sudo systemctl start docker
-sudo systemctl enable docker
+sudo nano docker-compose.yml
 ```
 ![Imatge2](Imatges/2.png)
 <br>
+## Captures de funcionament i explicación
+**Contingut del web** <br>
+Per comprovar que el servidor web funciona correctament, hem creat un fitxer index.php a dins la carpeta web/ amb aquest codi:
+![Imatge3](Imatges/3.png)
+<br>
+**Execució** <br>
+Un cop tenim preparats els fitxers, hem arrencat l’entorn amb:
+![Imatge4](Imatges/4.png)
+<br>
+![Imatge5](Imatges/5.png)
+<br>
+![Imatge6](Imatges/6.png)
+<br>
+
 Després revisem la versió del docker, amb la següent comanda:
 ```
 docker --version
@@ -102,8 +123,8 @@ docker-compose ps
 ```
 ![Imatge5](Imatges/5.png)
 
-# <p align="center">  Disseny i creació d’un entorn multi-contenidor amb Docker Compose </p>
-------------
+## Disseny i creació d’un entorn multi-contenidor amb Docker Compose
+
 El nostre esquema i disseny, amb la tota la seva configuració:
 
 | Servei         | Contenidor       | Port Extern | Port Intern |
