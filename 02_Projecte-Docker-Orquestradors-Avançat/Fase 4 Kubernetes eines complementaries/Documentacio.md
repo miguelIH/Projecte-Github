@@ -12,14 +12,14 @@ Un cop instal·lat, ho hem confirmat amb:
 ## Desplegament d’una app amb Helm
 Per demostrar el funcionament, hem instal·lat **Grafana** amb Helm:
 ![Imatge3](Imatges/3.png)
-![Imatge4](Imatges/4.png)
+![Imatge4](Imatges/7.png)
 <br>
 Això ha creat tots els recursos necessaris (Deployment, Service, PVC...) amb un sol comandament.
 ## Comprovació de l'estat
-![Imatge5](Imatges/5.png)
+![Imatge5](Imatges/4.png)
 <br>
 Per eliminar-ho:
-![Imatge6](Imatges/6.png)
+![Imatge6](Imatges/5.png)
 <br>
 ## Introducció a Istio
 Istio és una plataforma de **service mesh** que s’integra amb Kubernetes per controlar i protegir el trànsit entre serveis del clúster. Amb Istio podem fer:
@@ -30,7 +30,7 @@ Istio és una plataforma de **service mesh** que s’integra amb Kubernetes per 
 
 ## Limitacions del nostre entorn
 Hem intentat activar Istio dins del nostre entorn Minikube amb:
-![Imatge7](Imatges/7.png)
+![Imatge7](Imatges/6.png)
 <br>
 Aquest error és degut al fet que Minikube necessita **més recursos dels que la nostra màquina virtual actual pot oferir.**
 
