@@ -19,6 +19,16 @@ També hem començat a treballar amb ConfigMap per gestionar configuracions PHP 
 <br>
 ## Estratègies d’alta disponibilitat
 El Deployment amb 3 rèpliques ja ens dona alta disponibilitat bàsica. Per reforçar-ho, hem afegit toleràncies per si un node falla
+Per garantir la disponibilitat contínua dels serveis en entorns Kubernetes, hem aplicat diverses estratègies d’alta disponibilitat. Hem fet una taula amb els components implicats, les tècniques utilitzades i la seva finalitat:
+
+| Component        | Estratègia aplicada                             | Finalitat                                      |
+|------------------|--------------------------------------------------|------------------------------------------------|
+| Pods             | Rèpliques (3)                                    | Redundància de servei                          |
+| Nodes            | Pod Anti-Affinity                                | Separació de pods en nodes diferents           |
+| Volums           | PersistentVolumeClaim (PVC)                      | Conservació de dades                           |
+| Serveis          | LoadBalancer o Ingress Controller                | Balanceig de càrrega extern                    |
+| Actualitzacions  | Rolling Update + Readiness/Liveness Probes      | Disponibilitat durant actualitzacions          |
+
 ## Monitorització amb Prometheus i Grafana
 Per aquesta fase hem començat a instal·lar Prometheus i Grafana per veure com es comporten els pods en temps real. El primer en ser instal·lat es Prometheus que ho farem de la següent manera:
 Creen el fitxer prometheus-deployment.yaml amb aquest contingut:
