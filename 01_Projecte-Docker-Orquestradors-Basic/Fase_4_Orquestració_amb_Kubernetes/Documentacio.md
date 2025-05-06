@@ -109,9 +109,10 @@ Des de la carpeta projectes/docker-lamp, hem construït i pujat la imatge al nos
 docker build -t ruizzy1998/phpinfo-web
 ```
 <br>
-```
+
+````
 docker push ruizzy1998/phpinfo-web
-```
+`````
 ![Imatge9](Imatges/9.png)
 <br>
 ## webserver-deployment.yaml
