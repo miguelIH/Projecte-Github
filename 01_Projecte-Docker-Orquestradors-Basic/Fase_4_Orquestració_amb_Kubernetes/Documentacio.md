@@ -166,8 +166,8 @@ Finalment aquesta va a ser la nostre **estructura** general:
 ## 📁 01_Projecte-Docker-Orquestradors
 
 - [Fase 1 - Configuracions i desplegaments](https://github.com/miguelIH/Projecte-Github/blob/main/01_Projecte-Docker-Orquestradors-Basic/Fase_1_Configuracions_i_desplegament_amb_Docker_Compose/Documentacio.md)
-- [Fase 2 - Orquestració i desplegament](01_Projecte-Docker-Orquestradors/Fase_2_Orquestració_i_desplegament/Documentacio.md)
-- [Fase 3 - Seguretat a Docker Swarm](01_Projecte-Docker-Orquestradors/Fase_3_Seguretat_a_Docker_Swarm/Documentacio.md)
+- [Fase 2 - Orquestració i desplegament](https://github.com/miguelIH/Projecte-Github/blob/main/01_Projecte-Docker-Orquestradors-Basic/Fase_2_Orquestraci%C3%B3_i_desplegament_amb_Docker_Swarm/Documentacio.md)
+- [Fase 3 - Seguretat a Docker Swarm](https://github.com/miguelIH/Projecte-Github/blob/main/01_Projecte-Docker-Orquestradors-Basic/Fase_3_Seguretat_a_Docker_Swarm/Documentacio.md)
 - [Fase 4 - Orquestració amb Kubernetes](01_Projecte-Docker-Orquestradors/Fase_4_Orquestració_amb_Kubernetes/Documentacio.md)
 
 ---
