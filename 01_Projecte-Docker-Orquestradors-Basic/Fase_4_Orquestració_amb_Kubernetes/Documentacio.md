@@ -73,10 +73,12 @@ minikube start --driver=docker
 ![Imatge5](Imatges/5.png)
 <br>
 Aquest procés ha trigat una mica, ja que ha descarregat les imatges necessàries i ha preparat els components del clúster:
+<br>
 •	Certificats i claus
 •	Pla de control (control plane)
 •	Regles RBAC (permissos i rols)
 •	Xarxa interna (CNI)
+<br>
 ![Imatge6](Imatges/6.png)
 <br>
 Tot i que ens ha donat un **avís de poc espai en disc** (93%), el clúster s'ha iniciat correctament i ens indica:
@@ -98,6 +100,49 @@ Un cop hem tingut el clúster Minikube en funcionament i kubectl preparat, hem c
 Per evitar l'error 403 Forbidden del contenidor per defecte de PHP, hem creat una imatge personalitzada amb un index.php que mostra phpinfo().
 - **index.php**
 - **Dockerfile:**
+<br>
+![Imatge8](Imatges/8.png)
+<br>
+Des de la carpeta projectes/docker-lamp, hem construït i pujat la imatge al nostre Docker Hub:
+<br>
+````
+docker build -t ruizzy1998/phpinfo-web
+````
+<br>
+
+````
+docker push ruizzy1998/phpinfo-web
+````
+
+![Imatge9](Imatges/9.png)
+<br>
+## webserver-deployment.yaml
+Hem creat un fitxer webserver-deployment.yaml amb el desplegament i el servei:
+![Imatge10](Imatges/10.png)
+<br>
+L'hem aplicat amb:
+````
+kubectl apply -f webserver-deployment.yaml
+````
+![Imatge11](Imatges/11.png)
+<br>
+## Redirecció del port amb socat
+Hem utilitzat la IP interna de Minikube (192.168.49.2) i l'hem redirigit des del port de la interfície bridge de la VM:
+```
+sudo socat TCP-LISTEN:30080,bind=0.0.0.0,fork TCP:192.168.49.2:30080
+```
+![Imatge12](Imatges/12.png)
+<br>
+Això ens ha permès accedir al servei des del navegador del nostre PC físic:
+![Imatge13](Imatges/13.png)
+<br>
+
+Finalment aquesta va a ser la nostre **estructura** general:
+![Imatge13](Imatges/estructura_general.png)
+
+
+
+
 
 
 
