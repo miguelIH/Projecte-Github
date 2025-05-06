@@ -15,6 +15,79 @@ Abans de començar, hem fet una comparació entre Docker Swarm i Kubernetes per 
 | Fitxers de configuració  | `docker-compose.yml`               | Fitxers YAML                                 |
 | Ús en producció          | Menys habitual                      | Estàndard de la indústria                    |
 
+## Preparació de l’entorn amb Minikube 	
+Per provar Kubernetes de manera local, hem fet servir **Minikube**, que ens permet crear un clúster en una sola màquina virtual per fer pràctiques.
+
+## Passos que hem seguit:
+**Instal·lar kubectl**:
+A causa de problemes amb el repositori oficial de Kubernetes (el repositori xenial ja no és compatible amb Ubuntu 24.04), hem optat per una via més senzilla i compatible: instal·lar kubectl amb Snap.
+Aquesta eina ens permet gestionar el clúster de Kubernetes, crear serveis, controlar pods i desplegar aplicacions.
+
+## Comanda d’instal·lació utilitzada
+Des del terminal hem executat:
+```
+sudo snap install kubectl --classic
+```
+![Imatge1](Imatges/1.png)
+<br>
+Aquest mètode és ràpid i automàtic, i ens evita haver d’afegir repositoris antics manualment. A més, Snap ens garanteix que tindrem una versió actualitzada i funcional.
+
+## Verificació de la instalación
+Per assegurar-nos que kubectl s’ha **instal·lat correctament**, hem fet:
+```
+kubectl version –client
+```
+![Imatge2](Imatges/2.png)
+<br>
+Ens ha retornat la versió del client i **hem pogut confirmar que funciona correctament** i ja el tenim disponible al sistema per gestionar Kubernetes.
+
+## Instal·lació de Minikube
+Per poder practicar amb Kubernetes en un entorn local, hem utilitzat **Minikube**, que ens permet crear un **clúster de Kubernetes en una sola màquina virtual**.
+Aquesta eina és ideal per fer proves, ja que ens simula el comportament d’un clúster real de forma senzilla i lleugera.
+
+## Requisits previs
+Abans d’instal·lar **Minikube**, hem comprovat que teníem:
+•	Docker ja instal·lat (necessari perquè Minikube utilitza un driver com Docker o VirtualBox)
+•	kubectl ja funcionant (instal·lat prèviament amb Snap)
+
+## Descarregar i instal·lar Minikube
+Hem baixat l’última versió de Minikube amb curl i l’hem instal·lat amb permisos d’administrador:
+```
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+```
+![Imatge3](Imatges/3.png)
+<br>
+```
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+```
+```
+minikube version
+```
+![Imatge4](Imatges/4.png)
+<br>
+## Iniciar el clúster amb Docker com a driver
+Un cop instal·lat Minikube, hem engegat el clúster local amb Docker com a driver executant:
+```
+minikube start --driver=docker
+```
+![Imatge5](Imatges/5.png)
+<br>
+Aquest procés ha trigat una mica, ja que ha descarregat les imatges necessàries i ha preparat els components del clúster:
+•	Certificats i claus
+•	Pla de control (control plane)
+•	Regles RBAC (permissos i rols)
+•	Xarxa interna (CNI)
+![Imatge6](Imatges/6.png)
+<br>
+Tot i que ens ha donat un **avís de poc espai en disc** (93%), el clúster s'ha iniciat correctament i ens indica:
+> Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+
+
+
+
+
+
 
 
 
