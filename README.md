@@ -1,8 +1,4 @@
 # <p align="center"> Projecte Final </p>
-
----
----
-
 <p align="center"><b>IES SAPALOMERA BLANES</b></p>
 
 ---
