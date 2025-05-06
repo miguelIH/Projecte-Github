@@ -98,16 +98,17 @@ kubectl get nodes
 Un cop hem tingut el clúster Minikube en funcionament i kubectl preparat, hem creat un fitxer YAML per desplegar el nostre **contenidor PHP amb Apache** i exposar-lo com a servei a través d’un port del node.
 ## Creació de la imatge Docker personalitzada
 Per evitar l'error 403 Forbidden del contenidor per defecte de PHP, hem creat una imatge personalitzada amb un index.php que mostra phpinfo().
-- **index.php**
-- **Dockerfile:**
+- **index.php** <br>
+- **Dockerfile:** <br>
 <br>
+
 ![Imatge8](Imatges/8.png)
 <br>
 Des de la carpeta projectes/docker-lamp, hem construït i pujat la imatge al nostre Docker Hub:
 <br>
-````
+```
 docker build -t ruizzy1998/phpinfo-web
-````
+```
 <br>
 
 ````
@@ -138,7 +139,7 @@ Això ens ha permès accedir al servei des del navegador del nostre PC físic:
 <br>
 
 Finalment aquesta va a ser la nostre **estructura** general:
-![Imatge13](Imatges/estructura_general.png)
+![Imatge14](Imatges/14.png)
 
 
 
