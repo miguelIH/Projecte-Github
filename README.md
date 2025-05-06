@@ -2,6 +2,7 @@
 ---
 <p align="center"><b>IES SAPALOMERA BLANES</b></p>
 ---
+
 **👨‍💻 Autors:** Alex Pica, Miguel Ibañez, Daniel Ruiz
 
 **📚 Asignatura:** M14
