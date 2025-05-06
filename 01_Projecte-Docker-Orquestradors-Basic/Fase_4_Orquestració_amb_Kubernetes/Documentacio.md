@@ -74,10 +74,10 @@ minikube start --driver=docker
 <br>
 Aquest procés ha trigat una mica, ja que ha descarregat les imatges necessàries i ha preparat els components del clúster:
 <br>
-•	Certificats i claus
-•	Pla de control (control plane)
-•	Regles RBAC (permissos i rols)
-•	Xarxa interna (CNI)
+- Certificats i claus <br>
+- Pla de control (control plane) <br>
+- Regles RBAC (permissos i rols) <br>
+- Xarxa interna (CNI) <br>
 <br>
 ![Imatge6](Imatges/6.png)
 <br>
@@ -139,6 +139,7 @@ Això ens ha permès accedir al servei des del navegador del nostre PC físic:
 <br>
 
 Finalment aquesta va a ser la nostre **estructura** general:
+<br>
 ![Imatge14](Imatges/14.png)
 
 
