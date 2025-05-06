@@ -80,7 +80,7 @@ Aquest procés ha trigat una mica, ja que ha descarregat les imatges necessàrie
 ![Imatge6](Imatges/6.png)
 <br>
 Tot i que ens ha donat un **avís de poc espai en disc** (93%), el clúster s'ha iniciat correctament i ens indica:
-> Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default >
+> Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default <
 
 
 
