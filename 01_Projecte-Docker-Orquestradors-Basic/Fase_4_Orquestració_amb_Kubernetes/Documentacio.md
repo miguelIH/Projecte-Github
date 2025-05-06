@@ -73,14 +73,16 @@ minikube start --driver=docker
 ![Imatge5](Imatges/5.png)
 <br>
 Aquest procés ha trigat una mica, ja que ha descarregat les imatges necessàries i ha preparat els components del clúster:
-<br>
+
 - Certificats i claus <br>
 - Pla de control (control plane) <br>
 - Regles RBAC (permissos i rols) <br>
 - Xarxa interna (CNI) <br>
-<br>
+
+
 ![Imatge6](Imatges/6.png)
 <br>
+
 Tot i que ens ha donat un **avís de poc espai en disc** (93%), el clúster s'ha iniciat correctament i ens indica:
 > Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
 Això vol dir que ja podem utilitzar kubectl per interactuar amb el clúster de Kubernetes.
