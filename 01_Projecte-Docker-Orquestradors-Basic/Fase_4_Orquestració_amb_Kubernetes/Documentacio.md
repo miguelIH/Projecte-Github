@@ -100,12 +100,15 @@ Un cop hem tingut el clúster Minikube en funcionament i kubectl preparat, hem c
 Per evitar l'error 403 Forbidden del contenidor per defecte de PHP, hem creat una imatge personalitzada amb un index.php que mostra phpinfo().
 - **index.php**
 - **Dockerfile:**
+<br>
 ![Imatge8](Imatges/8.png)
 <br>
 Des de la carpeta projectes/docker-lamp, hem construït i pujat la imatge al nostre Docker Hub:
+<br>
 ```
 docker build -t ruizzy1998/phpinfo-web
 ```
+<br>
 ```
 docker push ruizzy1998/phpinfo-web
 ```
