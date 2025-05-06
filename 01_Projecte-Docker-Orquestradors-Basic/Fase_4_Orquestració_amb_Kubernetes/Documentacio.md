@@ -81,7 +81,24 @@ Aquest procés ha trigat una mica, ja que ha descarregat les imatges necessàrie
 <br>
 Tot i que ens ha donat un **avís de poc espai en disc** (93%), el clúster s'ha iniciat correctament i ens indica:
 > Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
-### > Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default 
+Això vol dir que ja podem utilitzar kubectl per interactuar amb el clúster de Kubernetes.
+## Comprovar que tot funciona
+Per veure si el clúster està en funcionament i el node està en funcionament, hem fet:
+Comprovar que tot funciona
+Per veure si el clúster està en funcionament i el node està en funcionament, hem fet:
+kubectl get nodes
+```
+kubectl get nodes
+```
+![Imatge7](Imatges/7.png)
+<br>
+## Desplegament del servei webserver amb Kubernetes
+Un cop hem tingut el clúster Minikube en funcionament i kubectl preparat, hem creat un fitxer YAML per desplegar el nostre **contenidor PHP amb Apache** i exposar-lo com a servei a través d’un port del node.
+## Creació de la imatge Docker personalitzada
+Per evitar l'error 403 Forbidden del contenidor per defecte de PHP, hem creat una imatge personalitzada amb un index.php que mostra phpinfo().
+- **index.php**
+- **Dockerfile:**
+
 
 
 
