@@ -105,14 +105,15 @@ Per evitar l'error 403 Forbidden del contenidor per defecte de PHP, hem creat un
 <br>
 Des de la carpeta projectes/docker-lamp, hem construït i pujat la imatge al nostre Docker Hub:
 <br>
-```
+````
 docker build -t ruizzy1998/phpinfo-web
-```
+````
 <br>
 
 ````
 docker push ruizzy1998/phpinfo-web
-`````
+````
+
 ![Imatge9](Imatges/9.png)
 <br>
 ## webserver-deployment.yaml
@@ -120,9 +121,9 @@ Hem creat un fitxer webserver-deployment.yaml amb el desplegament i el servei:
 ![Imatge10](Imatges/10.png)
 <br>
 L'hem aplicat amb:
-```
+````
 kubectl apply -f webserver-deployment.yaml
-```
+````
 ![Imatge11](Imatges/11.png)
 <br>
 ## Redirecció del port amb socat
@@ -135,8 +136,9 @@ sudo socat TCP-LISTEN:30080,bind=0.0.0.0,fork TCP:192.168.49.2:30080
 Això ens ha permès accedir al servei des del navegador del nostre PC físic:
 ![Imatge13](Imatges/13.png)
 <br>
+
 Finalment aquesta va a ser la nostre **estructura** general:
-![Imatge13](Imatges/estructura general.png)
+![Imatge13](Imatges/estructura_general.png)
 
 
 
