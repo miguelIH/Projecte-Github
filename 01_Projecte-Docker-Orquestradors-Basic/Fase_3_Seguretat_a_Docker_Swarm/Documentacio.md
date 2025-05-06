@@ -69,7 +69,7 @@ Podem veure que les 2 repliques están actives i amb la comanda:
 ```
 docker service ps test-nginx
 ```
-![Imatge9](Imatges/11.png)
+![Imatge9](Imatges/a.png)
 <br>
 Això ens confirma que Docker Swarm ha distribuït les rèpliques automàticament entre el node manager i el node worker.
 
