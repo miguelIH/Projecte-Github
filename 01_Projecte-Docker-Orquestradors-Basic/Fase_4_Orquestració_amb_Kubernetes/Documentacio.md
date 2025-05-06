@@ -162,3 +162,19 @@ Finalment aquesta va a ser la nostre **estructura** general:
 ### [Fase 1](https://github.com/miguelIH/Projecte-Github/blob/main/01_Projecte-Docker-Orquestradors-Basic/Fase_4_Orquestraci%C3%B3_amb_Kubernetes/Documentacio.md)
 ### [Fase 2](https://github.com/miguelIH/Projecte-Github/blob/main/01_Projecte-Docker-Orquestradors-Basic/Fase_2_Orquestraci%C3%B3_i_desplegament_amb_Docker_Swarm/Documentacio.md)
 ### [Fase 3](https://github.com/miguelIH/Projecte-Github/blob/main/01_Projecte-Docker-Orquestradors-Basic/Fase_3_Seguretat_a_Docker_Swarm/Documentacio.md)
+
+## 📁 01_Projecte-Docker-Orquestradors
+
+- [Fase 1 - Configuracions i desplegaments](01_Projecte-Docker-Orquestradors/Fase_1_Configuracions_i_desplegaments/Documentacio.md)
+- [Fase 2 - Orquestració i desplegament](01_Projecte-Docker-Orquestradors/Fase_2_Orquestració_i_desplegament/Documentacio.md)
+- [Fase 3 - Seguretat a Docker Swarm](01_Projecte-Docker-Orquestradors/Fase_3_Seguretat_a_Docker_Swarm/Documentacio.md)
+- [Fase 4 - Orquestració amb Kubernetes](01_Projecte-Docker-Orquestradors/Fase_4_Orquestració_amb_Kubernetes/Documentacio.md)
+
+---
+
+## 📁 02_Projecte-Docker-Orquestradors
+
+- [Fase 1 - Docker Swarm Escalat, backups i gestió](02_Projecte-Docker-Orquestradors/Fase_1_Docker_Swarm_Escalat_backups_i_gestio/Documentacio.md)
+- [Fase 2 - Kubernetes Alta disponibilitat](02_Projecte-Docker-Orquestradors/Fase_2_Kubernetes_Alta_disponibilitat/Documentacio.md)
+- [Fase 3 - Kubernetes Gestió de recursos](02_Projecte-Docker-Orquestradors/Fase_3_Kubernetes_Gestio_de_recursos/Documentacio.md)
+- [Fase 4 - Kubernetes Eines complexes](02_Projecte-Docker-Orquestradors/Fase_4_Kubernetes_eines_complexes/Documentacio.md)
