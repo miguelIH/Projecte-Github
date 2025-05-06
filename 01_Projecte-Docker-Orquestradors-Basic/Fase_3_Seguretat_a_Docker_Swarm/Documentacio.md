@@ -63,19 +63,19 @@ Amb la comanda:
 ```
 docker service ls
 ```
-![Imatge8](Imatges/8.png)
+![Imatge8](Imatges/10.png)
 <br>
 Podem veure que les 2 repliques están actives i amb la comanda:
 ```
 docker service ps test-nginx
 ```
-![Imatge9](Imatges/9.png)
+![Imatge9](Imatges/11.png)
 <br>
 Això ens confirma que Docker Swarm ha distribuït les rèpliques automàticament entre el node manager i el node worker.
 
-![Imatge10](Imatges/10.png)
+![Imatge10](Imatges/8.png)
 <br>
-![Imatge11](Imatges/11.png)
+![Imatge11](Imatges/9.png)
 <br>
 Podem veure que tan amb la ip del principal com la del secundari funciona sense cap mena de problema
 
