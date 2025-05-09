@@ -1,0 +1,27 @@
+---
+- name: Activar moduls Apache modules
+  apache2_module:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - proxy
+    - proxy_fcgi
+    - rewrite
+
+- name: Crear configuracio del site
+  template:
+    src: site.conf.j2
+    dest: /etc/apache2/sites-available/{{ nom_site }}.conf
+
+- name: Create site directory
+  file:
+    path: /var/www/{{ nom_site }}
+    state: directory
+    owner: "{{ nom_usuari }}"
+    group: "{{ nom_usuari }}"
+    mode: '0755'
+
+- name: Activar el site
+  command: a2ensite {{ nom_site }}
+  notify:
+    - Restart Apache2

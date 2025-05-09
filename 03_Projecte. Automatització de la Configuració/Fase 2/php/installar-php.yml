@@ -1,0 +1,26 @@
+---
+- name: Afegir el repositori de Ondrej per a PHP
+  apt_repository:
+    repo: ppa:ondrej/php
+    state: present
+
+- name: Acceptar el canvi de metadades del repositori
+  shell: apt-get update --allow-releaseinfo-change
+
+- name: Actualitzar la cache d'APT
+  apt:
+    update_cache: yes
+
+- name: Instal·lar PHP {{ versio_php }} i els mòduls comuns
+  apt:
+    name:
+      - php{{ versio_php }}
+      - php{{ versio_php }}-cli
+      - php{{ versio_php }}-fpm
+      - php{{ versio_php }}-mysql
+      - php{{ versio_php }}-curl
+      - php{{ versio_php }}-mbstring
+      - php{{ versio_php }}-xml
+      - php{{ versio_php }}-zip
+      - php{{ versio_php }}-bcmath
+    state: present

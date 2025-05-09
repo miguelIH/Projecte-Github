@@ -1,0 +1,20 @@
+---
+- name: Crear grup amb GID 5000
+  group:
+    name: "{{ nom_usuari }}"
+    gid: 5000
+
+- name: Crear usuari {{ nom_usuari }}
+  user:
+    name: "{{ nom_usuari }}"
+    password: "{{ contrasenya_usuari | password_hash('sha512') }}"
+    uid: 5000
+    group: 5000
+    create_home: yes
+    shell: /bin/bash
+
+- name: Afegir l'usuari {{ nom_usuari }} al grup www-data
+  user:
+    name: www-data
+    groups: "{{ nom_usuari }}"
+    append: yes

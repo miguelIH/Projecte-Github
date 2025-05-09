@@ -1,0 +1,12 @@
+[{{ nom_site }}]
+user = {{ nom_usuari }}
+group = {{ nom_usuari }}
+listen = /var/run/php/{{ nom_site }}-php{{ versio_php }}-fpm.sock
+listen.owner = {{ nom_usuari }}
+listen.group = {{ nom_usuari }}
+listen.mode = 0660
+pm = dynamic
+pm.max_children = 5
+pm.start_servers = 2
+pm.min_spare_servers = 1
+pm.max_spare_servers = 3

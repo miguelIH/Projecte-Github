@@ -1,0 +1,28 @@
+---
+- name: Install required archive tools
+  apt:
+    name:
+      - unzip
+    state: present
+    update_cache: yes
+
+- name: Descargar WordPress
+  get_url:
+    url: "https://ca.wordpress.org/latest-ca.zip"
+    dest: /tmp/wordpress.tar.gz
+
+- name: Extraure WordPress manualment amb unzip
+  shell: unzip -o /tmp/wordpress.zip -d /tmp/
+  args:
+    creates: /tmp/wordpress
+
+- name: Copiar WordPress al lloc
+  shell: cp -r /tmp/wordpress/* /var/www/{{ nom_site }}/
+
+- name: Assignar permisos al directori del lloc
+  file:
+    path: "/var/www/{{ nom_site }}"
+    owner: "{{ nom_usuari }}"
+    group: "{{ nom_usuari }}"
+    mode: "0755"
+    recurse: yes

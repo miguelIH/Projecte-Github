@@ -1,0 +1,6 @@
+- name: Copiar plantilla php
+  template:
+    src: php-fpm.conf.j2
+    dest: /etc/php/{{ versio_php }}/fpm/pool.d/{{ nom_site }}.conf
+  notify:
+    - Restart PHP-FPM
