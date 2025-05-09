@@ -1,0 +1,24 @@
+
+- name: Desplegar WordPress amb Docker
+  hosts: servidor_wordpress
+  become: yes
+  tasks:
+    - name: Instal·lar Docker
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Correr contenidor de WordPress
+      docker_container:
+        name: wordpress
+        image: wordpress:latest
+        state: started
+        restart_policy: always
+        ports:
+          - "8080:80"
+        env:
+          WORDPRESS_DB_HOST: db
+          WORDPRESS_DB_NAME: wordpress
+          WORDPRESS_DB_USER: wpuser
+          WORDPRESS_DB_PASSWORD: wpsecret
