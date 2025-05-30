@@ -28,5 +28,17 @@
 - [Fase 3 - Kubernetes Gestió de recursos](https://github.com/miguelIH/Projecte-Github/blob/main/02_Projecte-Docker-Orquestradors-Avan%C3%A7at/Fase%203%20Kubernetes%20Gesti%C3%B3%20de%20recursos%2C%20escalat%20i%20balanceig%20de%20c%C3%A0rrega/Documentacio.md)
 - [Fase 4 - Kubernetes Eines complexes](https://github.com/miguelIH/Projecte-Github/blob/main/02_Projecte-Docker-Orquestradors-Avan%C3%A7at/Fase%204%20Kubernetes%20eines%20complementaries/Documentacio.md)
 
+
+## 📁 03_Projecte. Automatització de la Configuració
+- [Fase 1 ](https://github.com/miguelIH/Projecte-Github/tree/main/03_Projecte.%20Automatitzaci%C3%B3%20de%20la%20Configuraci%C3%B3/Fase%201)
+
+
+## 📁 02_Projecte-Docker-Orquestradors Avançat
+
+
+
+## 📁 02_Projecte-Docker-Orquestradors Avançat
+
+
 ---
 <p align="center"><b>IES SAPALOMERA BLANES</b></p>
