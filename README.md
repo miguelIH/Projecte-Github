@@ -31,9 +31,12 @@
 
 ## 📁 03_Projecte. Automatització de la Configuració
 - [Fase 1 ](https://github.com/miguelIH/Projecte-Github/tree/main/03_Projecte.%20Automatitzaci%C3%B3%20de%20la%20Configuraci%C3%B3/Fase%201)
+- [Fase 2 ](https://github.com/miguelIH/Projecte-Github/tree/main/03_Projecte.%20Automatitzaci%C3%B3%20de%20la%20Configuraci%C3%B3/Fase%202)
+- [Fase 3 ](https://github.com/miguelIH/Projecte-Github/tree/main/03_Projecte.%20Automatitzaci%C3%B3%20de%20la%20Configuraci%C3%B3/Fase%203)
 
 
-## 📁 02_Projecte-Docker-Orquestradors Avançat
+## 📁04_Projecte. IDS_IPS  (Snort,OSSEC, Suricata)
+- [OSSEC]( )
 
 
 
