@@ -47,10 +47,10 @@
 - [Codis](https://github.com/miguelIH/Projecte-Github/tree/main/10_Implementaci%C3%B3%20dun%20configurador%20de%20hosting/Codis )
 
 ## 📁 11_VoIP en una Infraestructura Distribuïda
-[Config i Demos](https://github.com/miguelIH/Projecte-Github/tree/main/11_VoIP%20en%20una%20Infraestructura%20Distribu%C3%AFda)
+- [Config i Demos](https://github.com/miguelIH/Projecte-Github/tree/main/11_VoIP%20en%20una%20Infraestructura%20Distribu%C3%AFda)
 
 ## 📁 Planificació i organització del projecte
-[Project](https://github.com/miguelIH/Projecte-Github/blob/main/Planificaci%C3%B3%20i%20organitzaci%C3%B3%20del%20projecte/Proyecto1.pdf)
+- [Project](https://github.com/miguelIH/Projecte-Github/blob/main/Planificaci%C3%B3%20i%20organitzaci%C3%B3%20del%20projecte/Proyecto1.pdf)
 
 
 
