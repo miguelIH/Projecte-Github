@@ -31,13 +31,27 @@
 
 ## 📁 03_Projecte. Automatització de la Configuració
 - [Fase 1 ](https://github.com/miguelIH/Projecte-Github/tree/main/03_Projecte.%20Automatitzaci%C3%B3%20de%20la%20Configuraci%C3%B3/Fase%201)
+- [Fase 2 ](https://github.com/miguelIH/Projecte-Github/tree/main/03_Projecte.%20Automatitzaci%C3%B3%20de%20la%20Configuraci%C3%B3/Fase%202)
+- [Fase 3 ](https://github.com/miguelIH/Projecte-Github/tree/main/03_Projecte.%20Automatitzaci%C3%B3%20de%20la%20Configuraci%C3%B3/Fase%203)
 
 
-## 📁 02_Projecte-Docker-Orquestradors Avançat
+## 📁04_Projecte. IDS_IPS  (Snort,OSSEC, Suricata)
+- [OSSEC](https://github.com/miguelIH/Projecte-Github/tree/main/04_Projecte.%20IDS_IPS%20%20(Snort%2COSSEC%2C%20Suricata)/OSSEC )
 
 
+## 📁 08_Projecte-Desenvolupament-Infraestructura-Distribuida
+- [Cofing](https://github.com/miguelIH/Projecte-Github/tree/main/08_Projecte-Desenvolupament-Infraestructura-Distribuida)
 
-## 📁 02_Projecte-Docker-Orquestradors Avançat
+
+## 📁 10_Implementació dun configurador de hosting
+- [Codis](https://github.com/miguelIH/Projecte-Github/tree/main/10_Implementaci%C3%B3%20dun%20configurador%20de%20hosting/Codis )
+
+## 📁 11_VoIP en una Infraestructura Distribuïda
+- [Config i Demos](https://github.com/miguelIH/Projecte-Github/tree/main/11_VoIP%20en%20una%20Infraestructura%20Distribu%C3%AFda)
+
+## 📁 Planificació i organització del projecte
+- [Project](https://github.com/miguelIH/Projecte-Github/blob/main/Planificaci%C3%B3%20i%20organitzaci%C3%B3%20del%20projecte/Proyecto1.pdf)
+
 
 
 ---
